@@ -12,6 +12,7 @@
     "express": "4.13.4",
     "express-handlebars": "3.0.0",
     "foreman": "1.4.1",
+    "logfmt": "1.2.0",
     "throng": "4.0.0"
   },
   "devDependencies": {
