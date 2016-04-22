@@ -1,0 +1,21 @@
+{
+  "bitwise": true,
+  "browser": true,
+  "camelcase": true,
+  "curly": true,
+  "devel": true,
+  "eqeqeq": true,
+  "immed": true,
+  "latedef": true,
+  "mocha": true,
+  "noarg": true,
+  "noyield": true,
+  "node": true,
+  "quotmark": "single",
+  "strict": true,
+  "unused": true,
+  "globals"   : {
+    "define": false,
+    "requirejs": false
+  }
+}
