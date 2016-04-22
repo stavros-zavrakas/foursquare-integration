@@ -8,6 +8,7 @@
     "client:clean": "rm -rf lib/web/public/css/libs && rm -rf lib/web/bower_components",
     "client:bower": "cd lib/web && bower install",
     "client:copy:css": "mkdir lib/web/public/css/libs && cp lib/web/bower_components/bootstrap/dist/css/bootstrap.min.css lib/web/public/css/libs",
+    "client:build:css": "npm run client:clean && npm run client:bower && npm run client:copy:css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
