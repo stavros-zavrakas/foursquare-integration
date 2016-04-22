@@ -3,12 +3,25 @@
   "version": "1.0.0",
   "description": "",
   "main": "lib/server.js",
+  "config": {
+    "bower": "lib/web/bower_components"
+  },
   "scripts": {
     "start": "nf start",
-    "client:clean": "rm -rf lib/web/public/css/libs && rm -rf lib/web/bower_components",
+
+    "client:clean": "rm -rf lib/web/public/css/libs && rm -rf lib/web/public/js/libs && rm -rf $npm_package_config_bower",
     "client:bower": "cd lib/web && bower install",
-    "client:copy:css": "mkdir lib/web/public/css/libs && cp lib/web/bower_components/bootstrap/dist/css/bootstrap.min.css lib/web/public/css/libs",
-    "client:build:css": "npm run client:clean && npm run client:bower && npm run client:copy:css",
+
+    "client:clean:css": "rm -rf lib/web/public/css/libs",
+    "client:copy:css": "mkdir lib/web/public/css/libs && cp $npm_package_config_bower/bootstrap/dist/css/bootstrap.min.css lib/web/public/css/libs",
+    "client:build:css": "npm run client:clean:css && npm run client:bower && npm run client:copy:css",
+
+    "client:clean:js": "rm -rf lib/web/public/js/libs",
+    "client:copy:js": "mkdir lib/web/public/js/libs && cp $npm_package_config_bower/jquery/dist/jquery.min.js lib/web/public/js/libs && cp $npm_package_config_bower/requirejs/require.js lib/web/public/js/libs",
+    "client:build:js": "npm run client:clean:js && npm run client:bower && npm run client:copy:js",
+
+    "client:build": "npm run client:build:css && npm run client:build:js",
+
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
