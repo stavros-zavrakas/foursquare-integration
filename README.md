@@ -14,7 +14,9 @@ The client side code is splitted into multiple modules:
 - utils.js - Some utility functions
 
 ## Build & Run
-- npm install
-- npm run client:clean
-- npm run client:build
-- npm start
+```
+npm install
+npm run client:clean
+npm run client:build
+npm start
+```
